@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Shopping List App</title>
+        <link rel="stylesheet" href="../src/index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <img src="../src/assets/images/cat.png" alt="animated pic of cat in the center">
+            <input type="text" placeholder="Bread...." id="input-el">
+            <button id="addToCart-btn">Add To Cart</button>
+            <button id="signin-btn">SIGN IN</button>
+            <p id="email-el"></p>
+            <ul id="ul-el"></ul>
+        </div>
+        <div id="modalOverlay">
+                <div id="modal">
+                    <div id="wrap">
+                        <div id="close-btn">X</div>
+                    </div>
+                    <form id="form-el">
+                        <label>Enter your email:</label>
+                        <input type="email" placeholder="example@gmail.com" required id="email">
+                        <label>Enter your password:</label>
+                        <input type="password" required id="password">
+                        <div>
+                            <button type="submit" id="submit-btn">Submit</button>
+                            <button id="decline-btn">Decline</button>
+                        </div>
+                    </form>
+                </div>
+        </div> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.15.15/validator.min.js"></script>
+
+        <script type="module" src="../src/App.js"></script>
+    </body>
+</html>

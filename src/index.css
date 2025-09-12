@@ -1,0 +1,108 @@
+/* helper style - css box model */
+.border-blue {
+    border: 1px solid blue;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    user-select: none;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+img {
+    width: 150px;
+}
+
+#container, img {
+    margin: auto;
+}
+
+input {
+    background: lightgray;
+    text-align: center;
+}
+
+input, button, label {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+input, button, #modal {
+    border-radius: 10px;
+}
+
+button, label {
+    font-family: inherit;
+    color: #ffffff;
+}
+
+#addToCart-btn {
+    background: lightcoral;
+}
+
+#signin-btn {
+    background: #000000;
+}
+
+/* Modal */
+#modal {
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+    background: #000000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#form-el {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-el input {
+    text-align: left;
+}
+
+button[type="submit"] {
+    background: green;
+}
+
+#wrap {
+    text-align: right;
+}
+
+#close-btn {
+    display: inline-block;
+    color: red;
+    cursor: pointer;
+}
+
+#decline-btn {
+    background: red;
+}
+
+label {
+    padding: 0;
+}
+
+#modalOverlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
