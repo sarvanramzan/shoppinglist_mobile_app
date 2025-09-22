@@ -8,6 +8,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const signInDataInDB = ref(database, "signin-data");
+const shoppingListInDB = ref(database, "shopping-list");
 
 const inputEl = document.getElementById("input-el");
 const addToCartBtn = document.getElementById("addToCart-btn");
@@ -36,6 +37,15 @@ onValue(signInDataInDB, (snapshot) => {
         submitBtn.disabled = false;
     }
 });
+
+onValue(shoppingListInDB, (snapshot) => {
+    if(snapshot.exists()) {
+        const listItems = Object.entries(snapshot.val());
+        for(let i = 0; i < listItems.length; i++) {
+            renderItems(listItems[i]);
+        }
+    }
+})
 
 signInBtn.addEventListener("click", () => {
     let signedInFunction;
@@ -84,4 +94,18 @@ signInBtn.addEventListener("click", () => {
     signedInFunction();
 });
 
-console.log(signInDataInDB);
+addToCartBtn.addEventListener("click", ()=> {
+    const inputValue = inputEl.value;
+    push(shoppingListInDB, inputValue);
+    inputEl.value = ""
+})
+
+function renderItems(items) { 
+    let itemID = items[0];
+    let itemValue = items[1];
+    let newEl = document.createElement("li");
+    newEl.textContent = itemValue;
+    ulEl.appendChild(newEl);
+}
+
+console.log(signInDataInDB);;
